@@ -1,6 +1,5 @@
 import pytest
-
-from pages.basket_page import BasketPage
+from .pages.basket_page import BasketPage
 from .pages.product_page import ProductPage
 
 
