@@ -11,8 +11,6 @@ class ProductPage(BasePage):
         self.should_be_toaster_with_basket_cost()
 
     def should_be_toaster_with_product_name(self):
-        #toaster_text = self.browser.extract_element_text(*ProductPageLocators.TOASTER_WITH_PRODUCT_NAME)
-        #product_name_text = self.browser.extract_element_text(*ProductPageLocators.PRODUCT_NAME)
         toaster_text = self.extract_element_text(*ProductPageLocators.TOASTER_WITH_PRODUCT_NAME)
         product_name_text = self.extract_element_text(*ProductPageLocators.PRODUCT_NAME)
         assert toaster_text == product_name_text, f"Product name:{product_name_text} Toaster contain product name:{toaster_text}"
