@@ -51,6 +51,10 @@ class BasePage():
         text_element = element.text
         return text_element
 
+    def enter_text(self, how, what, text):
+        element = self.browser.find_element(how, what)
+        element.send_keys(text)
+
     def solve_quiz_and_get_code(self):
         alert = self.browser.switch_to.alert
         x = alert.text.split(" ")[2]
@@ -75,5 +79,9 @@ class BasePage():
     def go_to_basket_view(self):
         basket_button = self.browser.find_element(*BasePageLocators.BASKET_BUTTON)
         basket_button.click()
+
+    def should_be_authorized_user(self):
+        assert self.is_element_present(*BasePageLocators.USER_ICON), "User icon is not presented," \
+                                                                     " probably unauthorised user"
 
 
